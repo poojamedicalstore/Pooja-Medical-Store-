@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaCare - Pooja Medical Store</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f5f7fb;
+        }
+
+        /* Top Header */
+
+        .topbar{
+            background:#0f9d58;
+            color:white;
+            padding:10px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .topbar h2{
+            font-size:28px;
+        }
+
+        .topbar input{
+            width:40%;
+            padding:10px;
+            border:none;
+            border-radius:5px;
+        }
+
+        .topbar button{
+            padding:10px 18px;
+            background:white;
+            color:#0f9d58;
+            border:none;
+            border-radius:5px;
+            font-weight:bold;
+            cursor:pointer;
+        }
+
+        /* Navigation */
+
+        .navbar{
+            background:white;
+            padding:15px 40px;
+            display:flex;
+            justify-content:center;
+            gap:40px;
+            box-shadow:0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar a{
+            text-decoration:none;
+            color:#333;
+            font-weight:bold;
+        }
+
+        .navbar a:hover{
+            color:#0f9d58;
+        }
+
+        /* Hero Section */
+
+        .hero{
+            background:linear-gradient(to right,#0f9d58,#34c759);
+            color:white;
+            padding:60px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            flex-wrap:wrap;
+        }
+
+        .hero-text{
+            width:50%;
+        }
+
+        .hero-text h1{
+            font-size:45px;
+            margin-bottom:15px;
+        }
+
+        .hero-text p{
+            font-size:18px;
+            margin-bottom:20px;
+        }
+
+        .hero-text button{
+            padding:12px 20px;
+            background:white;
+            color:#0f9d58;
+            border:none;
+            border-radius:6px;
+            font-size:16px;
+            cursor:pointer;
+            font-weight:bold;
+        }
+
+        .hero img{
+            width:320px;
+        }
+
+        /* Categories */
+
+        .section-title{
+            text-align:center;
+            margin:40px 0 20px;
+            color:#2c3e50;
+        }
+
+        .categories{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+            flex-wrap:wrap;
+            padding:0 20px;
+        }
+
+        .category-card{
+            background:white;
+            width:180px;
+            text-align:center;
+            padding:20px;
+            border-radius:12px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .category-card:hover{
+            transform:translateY(-5px);
+        }
+
+        .category-card img{
+            width:80px;
+            margin-bottom:10px;
+        }
+
+        /* Product Section */
+
+        .products{
+            display:flex;
+            justify-content:center;
+            gap:25px;
+            flex-wrap:wrap;
+            padding:20px;
+        }
+
+        .product-card{
+            background:white;
+            width:240px;
+            border-radius:12px;
+            overflow:hidden;
+            box-shadow:0 0 12px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .product-card:hover{
+            transform:scale(1.03);
+        }
+
+        .product-card img{
+            width:100%;
+            height:180px;
+            object-fit:cover;
+        }
+
+        .product-info{
+            padding:15px;
+        }
+
+        .product-info h3{
+            margin-bottom:8px;
+            color:#2c3e50;
+        }
+
+        .price{
+            color:#e74c3c;
+            font-size:20px;
+            font-weight:bold;
+            margin:10px 0;
+        }
+
+        .rating{
+            color:orange;
+            margin-bottom:10px;
+        }
+
+        .btn{
+            width:100%;
+            padding:10px;
+            background:#0f9d58;
+            color:white;
+            border:none;
+            border-radius:6px;
+            cursor:pointer;
+            font-size:15px;
+        }
+
+        .btn:hover{
+            background:#0c7c45;
+        }
+
+        /* Features */
+
+        .features{
+            display:flex;
+            justify-content:center;
+            gap:30px;
+            flex-wrap:wrap;
+            padding:40px 20px;
+        }
+
+        .feature-box{
+            background:white;
+            width:250px;
+            text-align:center;
+            padding:20px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Footer */
+
+        .footer{
+            background:#1f2937;
+            color:white;
+            padding:30px;
+            margin-top:40px;
+        }
+
+        .footer-content{
+            display:flex;
+            justify-content:space-between;
+            flex-wrap:wrap;
+        }
+
+        .footer h3{
+            margin-bottom:10px;
+        }
+
+        .footer p{
+            margin:5px 0;
+        }
+
+        .copyright{
+            text-align:center;
+            margin-top:20px;
+            border-top:1px solid gray;
+            padding-top:10px;
+        }
+
+        /* Responsive */
+
+        @media(max-width:768px){
+
+            .hero{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .hero-text{
+                width:100%;
+                margin-bottom:20px;
+            }
+
+            .topbar{
+                flex-direction:column;
+                gap:10px;
+            }
+
+            .topbar input{
+                width:90%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <div class="topbar">
+        <h2>PharmaCare</h2>
+
+        <input type="text" placeholder="Search medicines, healthcare products...">
+
+        <button>Login</button>
+    </div>
+
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Medicines</a>
+        <a href="#">Lab Tests</a>
+        <a href="#">Healthcare</a>
+        <a href="#">Offers</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- HERO SECTION -->
+
+    <div class="hero">
+
+        <div class="hero-text">
+            <h1>Online Pharmacy & Healthcare</h1>
+
+            <p>Order medicines online with fast delivery and best discounts.</p>
+
+            <button>Order Now</button>
+        </div>
+
+        <img src="https://cdn-icons-png.flaticon.com/512/2966/2966488.png">
+
+    </div>
+
+    <!-- CATEGORIES -->
+
+    <h2 class="section-title">Shop by Category</h2>
+
+    <div class="categories">
+
+        <div class="category-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/4320/4320337.png">
+            <h3>Medicines</h3>
+        </div>
+
+        <div class="category-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2785/2785819.png">
+            <h3>Diabetes Care</h3>
+        </div>
+
+        <div class="category-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/3209/3209265.png">
+            <h3>Vitamins</h3>
+        </div>
+
+        <div class="category-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png">
+            <h3>Personal Care</h3>
+        </div>
+
+    </div>
+
+    <!-- PRODUCTS -->
+
+    <h2 class="section-title">Popular Products</h2>
+
+    <div class="products">
+
+        <!-- PRODUCT -->
+
+        <div class="product-card">
+
+            <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=800">
+
+            <div class="product-info">
+
+                <h3>Paracetamol 500mg</h3>
+
+                <p>Fever & pain relief tablets</p>
+
+                <div class="rating">⭐⭐⭐⭐☆</div>
+
+                <div class="price">₹25</div>
+
+                <button class="btn">Add to Cart</button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT -->
+
+        <div class="product-card">
+
+            <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=800">
+
+            <div class="product-info">
+
+                <h3>Vitamin C Tablets</h3>
+
+                <p>Immunity booster supplement</p>
+
+                <div class="rating">⭐⭐⭐⭐⭐</div>
+
+                <div class="price">₹120</div>
+
+                <button class="btn">Add to Cart</button>
+
+            </div>
+
+        </div>
+
+        <!-- PRODUCT -->
+
+        <div class="product-card">
+
+            <img src="https://images.unsplash.com/photo-1626716493137-b67fe9501e76?q=80&w=800">
+
+            <div class="product-info">
+
+                <h3>Blood Pressure Monitor</h3>
+
+                <p>Digital automatic BP machine</p>
+
+                <div class="rating">⭐⭐⭐⭐☆</div>
+
+                <div class="price">₹1499</div>
+
+                <button class="btn">Add to Cart</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- FEATURES -->
+
+    <h2 class="section-title">Why Choose Us?</h2>
+
+    <div class="features">
+
+        <div class="feature-box">
+            <h3>🚚 Fast Delivery</h3>
+            <p>Get medicines delivered quickly at your doorstep.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>💊 Genuine Medicines</h3>
+            <p>100% authentic and quality healthcare products.</p>
+        </div>
+
+        <div class="feature-box">
+            <h3>📞 24/7 Support</h3>
+            <p>Customer support available anytime for help.</p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <div class="footer-content">
+
+            <div>
+                <h3>Pooja Medical Store</h3>
+                <p>Your trusted online pharmacy.</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <p>About Us</p>
+                <p>Privacy Policy</p>
+                <p>Terms & Conditions</p>
+            </div>
+
+            <div>
+                <h3>Contact</h3>
+                <p>Email: Poojamedicalstore.com</p>
+                <p>Phone: +91-7354539562</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Pooja Medical Store. All Rights Reserved.
+        </div>
+
+    </div>
+
+</body>
+</html>
+
+
+
+
+
